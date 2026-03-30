@@ -34,7 +34,7 @@ const editStudent = async (req, res) => {
     if (!id) {
         return res.status(StatusCodes.BAD_REQUEST).json({detail: "Please provide id to fetch"})
     }
-    const student = await Student.findOneOneAndUpdate({_id: id}, req.body, {returnDocument: "after"});
+    const student = await Student.findOneAndUpdate({_id: id}, req.body, {returnDocument: "after"});
     if (!student){
         return res.status(StatusCodes.BAD_REQUEST).json({
             detail: `ID "${id}" does not exist` 
@@ -47,7 +47,7 @@ const deleteStudent = async (req, res) => {
     if (!id) {
         return res.status(StatusCodes.BAD_REQUEST).json({detail: "Please provide id to fetch"})
     }
-    const student = await Student.findOneOneAndDelete({_id: id});
+    const student = await Student.findOneAndDelete({_id: id});
     if (!student){
         return res.status(StatusCodes.BAD_REQUEST).json({
             detail: `ID "${id}" does not exist` 

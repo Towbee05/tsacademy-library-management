@@ -1,8 +1,12 @@
 import Attendant from "../models/Attendant.js";
 import { StatusCodes } from "http-status-codes";
 
-const createLibraryAttendant = (req, res) => {
-    res.status(StatusCodes.CREATED).json({});
+const createLibraryAttendant = async (req, res) => {
+    const { name, email, attendantID } = req.body;
+    const attendant = await Attendant.create({name: name.trim().toLowerCase(), email, attendantID});
+    res.status(StatusCodes.CREATED).json({
+        data: attendant
+    })
 };
 
 const getAllLibraryAttendant = (req, res) => {
@@ -16,4 +20,12 @@ const editLibraryAttendant = (req, res) => {
 };
 const deleteLibraryAttendant = (req, res) => {
     res.status(StatusCodes.NO_CONTENT).json({});
+};
+
+export {
+    createLibraryAttendant,
+    getAllLibraryAttendant,
+    getSingleLibraryAttendant,
+    editLibraryAttendant,
+    deleteLibraryAttendant
 };

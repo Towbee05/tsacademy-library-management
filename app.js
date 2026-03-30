@@ -3,6 +3,7 @@ import "dotenv/config";
 import { connectDB } from "./db/connectDB.js";
 import authorRouter from "./routes/author.js";
 import studentRouter from "./routes/student.js";
+import attendantRouter from "./routes/attendant.js";
 import errorCatcher from "./middleware/error-catcher.js";
 
 const app = express();
@@ -12,6 +13,7 @@ const mongoUri = process.env.MONGO_URI;
 
 app.use("/api/v1/authors", authorRouter);
 app.use("/api/v1/students", studentRouter);
+app.use("/api/v1/library/attendants", attendantRouter);
 
 // Error middleware
 app.use(errorCatcher);
