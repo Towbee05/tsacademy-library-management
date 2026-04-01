@@ -12,17 +12,16 @@ const BookSchema = new mongoose.Schema({
         type: String,
         required: [true, "Please enter book's ISBN"],
         unique: true,
-        minlength: [13, "ISBN should be in the format 'x-xxx-xxxxx-x'"],
-        maxlength: [17, "ISBN should be in the format '978-x-xxxx-xxxx-x' or '979-x-xxxx-xxxx-x'"],
         validate: {
             validator: function (v) {
                 const isbn10 = /^\d{1}-\d{3}-\d{5}-\d{1}$/;
                 const isbn13 = /^(978|979)-\d{1}-\d{4}-\d{4}-\d{1}$/;
                 return isbn10.test(v) || isbn13.test(v);
             },
-            message: "Please provide a correst ISBN format."
+            message: "Please provide a correct ISBN format {x-xxx-xxxxx-x} or {978-xxx-xxxx-xxxx-x} or {979-xxx-xxxx-xxxx-x}."
         }
     },
+    thumbnail: String,
     authors: [{
         type: mongoose.Schema.Types.ObjectId,
         ref: "Author",

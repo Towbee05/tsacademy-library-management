@@ -8,24 +8,16 @@ const getAllAuthors = async (req, res) => {
 
 const createNewAuthor = async (req, res) => {
     const { name, bio } = req.body;
-    if (!name.trim()) {
-        return res.status(StatusCodes.BAD_REQUEST).json({
-            detail: "Please provide an author name"
-        });
-    };
-    if (!bio.trim()) {
-        return res.status(StatusCodes.BAD_REQUEST).json({
-            detail: "Please provide an author bio"
-        });
-    };
+    const data = {name};
+    if (bio) data.bio = bio.trim();
     // Check if author exists
-    const existingAuthor = await Author.findOne({name: name.toLowerCase()});
+    const existingAuthor = await Author.findOne({name: name.trim().toLowerCase()});
     if (existingAuthor) {
         return res.status(StatusCodes.BAD_REQUEST).json({
             detail: "Provided Author name exists in database"
         });
     }
-    const author = await Author.create({name, bio});
+    const author = await Author.create(data);
     res.status(StatusCodes.CREATED).json({ data: author });
 };
 
@@ -59,7 +51,7 @@ const deleteAuthor = async (req, res) => {
             detail: `No Author with specified ID ${id} found`
         });
     };
-    res.status(StatusCodes.OK).json({
+    res.status(StatusCodes.CREATED).json({
         "details" : author
     });
 };

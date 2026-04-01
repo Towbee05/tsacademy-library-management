@@ -12,7 +12,7 @@ const createStudent = async (req, res) => {
 
 const getAllStudents = async (req, res) => {
     const students = await Student.find({});
-    res.status(StatusCodes.CREATED).json({data: students});
+    res.status(StatusCodes.OK).json({data: students});
 };
 const getSingleStudent = async (req, res) => {
     const { id } = req.params;
@@ -26,7 +26,7 @@ const getSingleStudent = async (req, res) => {
             detail: `ID "${id}" does not exist` 
         });
     }
-    res.status(StatusCodes.CREATED).json({data: student});
+    res.status(StatusCodes.OK).json({data: student});
 };
 const editStudent = async (req, res) => {
     const { id } = req.params;

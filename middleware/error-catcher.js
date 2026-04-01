@@ -8,6 +8,10 @@ const errorCatcher = (err, req, res, next) => {
     console.log(Object.keys(err.reason));
     console.log(Object.values(err));
     // validate if error is due to invalid ObjectID
+    
+    // if (err instanceof err.TypeError){
+    //     return res.status(StatusCodes.BAD_REQUEST).json({detail: err.message});
+    // };
     if (err instanceof mongoose.Error.CastError) {
         return res.status(StatusCodes.BAD_REQUEST).json({
             detail: `Invalid ID provided: ${err.value}. ID should be a single string of 12 bytes or a string of 24 hex characters`
@@ -22,10 +26,16 @@ const errorCatcher = (err, req, res, next) => {
     }
     // Validate if error is due to validation error
     if (err instanceof mongoose.Error.ValidationError) {
-        const errors = Object.values(err.errors).map(error => ({path: error.path, message: error.message}));
+        const errors = Object.values(err.errors).map(error => (
+            {
+                path: error.path, 
+                value: error.value,
+                message: error.message
+            }
+        ));
         return res.status(StatusCodes.BAD_REQUEST).json({detail: errors});
     };
-    res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({detail: "Internal server error. Please contact administrator"});
+    return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({detail: "Internal server error. Please contact administrator"});
 }
 
 export default errorCatcher;

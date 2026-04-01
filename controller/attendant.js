@@ -2,8 +2,8 @@ import Attendant from "../models/Attendant.js";
 import { StatusCodes } from "http-status-codes";
 
 const createLibraryAttendant = async (req, res) => {
-    const { name, email, attendantID } = req.body;
-    const attendant = await Attendant.create({name: name.trim().toLowerCase(), email, attendantID});
+    const { name, staffID } = req.body;
+    const attendant = await Attendant.create({name: name.trim().toLowerCase(), staffID});
     res.status(StatusCodes.CREATED).json({
         data: attendant
     })
