@@ -1,0 +1,62 @@
+[
+  {
+    "name": "George Orwell",
+    "bio": "English novelist and essayist known for dystopian works exploring surveillance, authoritarianism, and political ideology."
+  },
+  {
+    "name": "Harper Lee",
+    "bio": "American novelist best known for exploring racial injustice and moral growth in the American South."
+  },
+  {
+    "name": "J.K. Rowling",
+    "bio": "British author famous for the Harry Potter fantasy series, one of the best-selling book franchises in history."
+  },
+  {
+    "name": "J.R.R. Tolkien",
+    "bio": "English writer and philologist who created the high-fantasy world of Middle-earth."
+  },
+  {
+    "name": "F. Scott Fitzgerald",
+    "bio": "American novelist associated with the Jazz Age, known for portraying wealth, ambition, and disillusionment."
+  },
+  {
+    "name": "Jane Austen",
+    "bio": "English novelist celebrated for romantic fiction that critiques social class and relationships."
+  },
+  {
+    "name": "Dan Brown",
+    "bio": "American thriller writer known for fast-paced mystery novels blending history, religion, and conspiracy."
+  },
+  {
+    "name": "Paulo Coelho",
+    "bio": "Brazilian novelist whose philosophical fiction explores destiny, spirituality, and personal discovery."
+  },
+  {
+    "name": "Suzanne Collins",
+    "bio": "American author known for dystopian young adult fiction examining power, survival, and media influence."
+  },
+  {
+    "name": "Markus Zusak",
+    "bio": "Australian writer recognized for emotionally powerful historical fiction narratives."
+  },
+  {
+    "name": "Khaled Hosseini",
+    "bio": "Afghan-American novelist whose works explore family, exile, and redemption."
+  },
+  {
+    "name": "Mary Shelley",
+    "bio": "English novelist and pioneer of science fiction, best known for gothic storytelling."
+  },
+  {
+    "name": "Bram Stoker",
+    "bio": "Irish author famous for gothic horror literature and vampire mythology."
+  },
+  {
+    "name": "Herman Melville",
+    "bio": "American novelist known for symbolic and philosophical maritime fiction."
+  },
+  {
+    "name": "Leo Tolstoy",
+    "bio": "Russian writer regarded as one of the greatest novelists, known for epic historical narratives."
+  }
+]

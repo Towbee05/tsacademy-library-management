@@ -1,0 +1,108 @@
+[
+  {
+    "title": "1984",
+    "isbn": "978-0-4515-2493-5",
+    "authors": ["George Orwell"],
+    "status": "IN",
+    "thumbnail": "https://m.media-amazon.com/images/I/71kxa1-0mfL.jpg"
+  },
+  {
+    "title": "To Kill a Mockingbird",
+    "isbn": "978-0-0611-2008-4",
+    "authors": ["Harper Lee"],
+    "status": "OUT",
+    "thumbnail": "https://m.media-amazon.com/images/I/81gepf1eMqL.jpg"
+  },
+  {
+    "title": "Harry Potter and the Sorcerer's Stone",
+    "isbn": "978-0-5903-5342-7",
+    "authors": ["J.K. Rowling"],
+    "status": "IN",
+    "thumbnail": "https://m.media-amazon.com/images/I/81YOuOGFCJL.jpg"
+  },
+  {
+    "title": "The Hobbit",
+    "isbn": "978-0-5479-2822-7",
+    "authors": ["J.R.R. Tolkien"],
+    "status": "IN",
+    "thumbnail": "https://m.media-amazon.com/images/I/91b0C2YNSrL.jpg"
+  },
+  {
+    "title": "The Great Gatsby",
+    "isbn": "978-0-7432-7356-5",
+    "authors": ["F. Scott Fitzgerald"],
+    "status": "OUT",
+    "thumbnail": "https://m.media-amazon.com/images/I/81af+MCATTL.jpg"
+  },
+  {
+    "title": "Pride and Prejudice",
+    "isbn": "978-0-1414-3951-8",
+    "authors": ["Jane Austen"],
+    "status": "IN",
+    "thumbnail": "https://m.media-amazon.com/images/I/81WcnNQ-TBL.jpg"
+  },
+  {
+    "title": "The Da Vinci Code",
+    "isbn": "978-0-3074-7427-8",
+    "authors": ["Dan Brown"],
+    "status": "IN",
+    "thumbnail": "https://m.media-amazon.com/images/I/81Q5XG2h6zL.jpg"
+  },
+  {
+    "title": "The Alchemist",
+    "isbn": "978-0-0611-2241-5",
+    "authors": ["Paulo Coelho"],
+    "status": "OUT",
+    "thumbnail": "https://m.media-amazon.com/images/I/71aFt4+OTOL.jpg"
+  },
+  {
+    "title": "The Hunger Games",
+    "isbn": "978-0-4390-2348-1",
+    "authors": ["Suzanne Collins"],
+    "status": "IN",
+    "thumbnail": "https://m.media-amazon.com/images/I/81p+xe8cbnL.jpg"
+  },
+  {
+    "title": "The Book Thief",
+    "isbn": "978-0-3758-4220-7",
+    "authors": ["Markus Zusak"],
+    "status": "IN",
+    "thumbnail": "https://m.media-amazon.com/images/I/81eB+7+CkUL.jpg"
+  },
+  {
+    "title": "The Kite Runner",
+    "isbn": "978-1-5946-3193-1",
+    "authors": ["Khaled Hosseini"],
+    "status": "OUT",
+    "thumbnail": "https://m.media-amazon.com/images/I/81IzbD2IiIL.jpg"
+  },
+  {
+    "title": "Frankenstein",
+    "isbn": "978-0-4862-8211-4",
+    "authors": ["Mary Shelley"],
+    "status": "IN",
+    "thumbnail": "https://m.media-amazon.com/images/I/71X7HnBkQ4L.jpg"
+  },
+  {
+    "title": "Dracula",
+    "isbn": "978-0-4864-1109-5",
+    "authors": ["Bram Stoker"],
+    "status": "IN",
+    "thumbnail": "https://m.media-amazon.com/images/I/81pJ7Z8mYyL.jpg"
+  },
+  {
+    "title": "Moby Dick",
+    "isbn": "978-1-5032-8078-6",
+    "authors": ["Herman Melville"],
+    "status": "OUT",
+    "thumbnail": "https://m.media-amazon.com/images/I/81PRVYH1s-L.jpg"
+  },
+  {
+    "title": "War and Peace",
+    "isbn": "978-0-1992-3276-5",
+    "authors": ["Leo Tolstoy"],
+    "status": "IN",
+    "thumbnail": "https://m.media-amazon.com/images/I/91A7N3ZlGLL.jpg"
+  }
+]
+
