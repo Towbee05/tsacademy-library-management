@@ -46,9 +46,6 @@ const getAllBooks = async (req, res) => {
   const skipper = ( page - 1 ) * limit;
   let books = await Book.find(searchData).populate("authors").skip(skipper).limit(limit);
   
-  console.log(page, limit);
-  console.log(skipper);
-  
   res.status(StatusCodes.OK).json({ length: books.length, data: books });
 };
 
@@ -60,13 +57,8 @@ const getSingleBook = async (req, res) => {
       detail: `Book with ID: ${id} not found.`,
     });
   }
-
-  console.log(book);
-  console.log("The book's status: ");
-  console.log(book.status);
-
+  
   if (book.status === "OUT") {
-    console.log("Book is out.");
     await book.populate(["issuedBy", "borrowedBy"]);
   }
 
@@ -130,12 +122,10 @@ const borrowBook = async (req, res) => {
     return res
       .status(StatusCodes.BAD_REQUEST)
       .json({ detail: `Book with ID: ${id} not found.` });
-  console.log(book);
   if (book.status === "OUT")
     return res
       .status(StatusCodes.BAD_REQUEST)
       .json({ detail: "Specified book is already borrowed." });
-  console.log("Book");
   book.status = "OUT";
   book.borrowedBy = borrowedBy;
   book.issuedBy = issuedBy;

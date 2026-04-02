@@ -2,11 +2,6 @@ import mongoose from "mongoose"
 import { StatusCodes } from "http-status-codes";
 
 const errorCatcher = (err, req, res, next) => {
-    console.log(err.code);
-    console.log(err);
-    console.log(Object.keys(err));
-    console.log(Object.keys(err.reason));
-    console.log(Object.values(err));
     // validate if error is due to invalid ObjectID
     
     // if (err instanceof err.TypeError){
