@@ -26,7 +26,7 @@ const getSingleLibraryAttendant = async (req, res) => {
   };
   res.status(StatusCodes.OK).json({ data: attendant });
 };
-const editLibraryAttendant = (req, res) => {
+const editLibraryAttendant = async (req, res) => {
   const { id } = req.params;
   const data = {};
   const { name, staffID } = req.body;
@@ -41,7 +41,7 @@ const editLibraryAttendant = (req, res) => {
   res.status(StatusCodes.CREATED).json({data: attendant});
 };
 
-const deleteLibraryAttendant = (req, res) => {
+const deleteLibraryAttendant = async (req, res) => {
   const { id } = req.params;
   const attendant = await Attendant.findOneAndDelete({_id: id});
   if (!attendant) {

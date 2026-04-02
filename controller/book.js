@@ -26,8 +26,30 @@ const createBook = async (req, res, next) => {
 };
 
 const getAllBooks = async (req, res) => {
-  const books = await Book.find({}).populate("authors");
-  res.status(StatusCodes.OK).json({ data: books });
+  // pagination values 
+  // Add pagination
+  let { page, limit, title, author } = req.query;
+  page = Number(page) || 1;
+  limit = Number(limit) || 10;
+
+  // If user is searching 
+  const searchData = {};
+  if (title || author) {
+    if (title) searchData.title = { $regex: title, $options: "i" } ;
+    if (author) {
+      const authors = await Author.find({name: {$regex: author, $options: "i"}});
+      const mappedID = authors.map(author => author.id);
+      searchData.authors = { $in: mappedID };
+    };
+  };
+
+  const skipper = ( page - 1 ) * limit;
+  let books = await Book.find(searchData).populate("authors").skip(skipper).limit(limit);
+  
+  console.log(page, limit);
+  console.log(skipper);
+  
+  res.status(StatusCodes.OK).json({ length: books.length, data: books });
 };
 
 const getSingleBook = async (req, res) => {

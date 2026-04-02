@@ -12,6 +12,11 @@ class SeedDatabase{
         this.connect = connectDB;
         this.books = books;
     }
+    async init () {
+        await this.connectToDB();
+        await this.seedAuthors();
+        await this.seedBooks();
+    };
     async connectToDB () {
         console.log("Connecting to database .... ⌛⌛");
         await this.connect(process.env.MONGO_URI);
@@ -20,8 +25,6 @@ class SeedDatabase{
 
     async seedAuthors () {
         try{
-            await this.connectToDB();
-        
             console.log("Seeding authors into database ⌛⌛");
             for (let i = 0; i < authors.length; i++) {
                 console.log(`Seeding author at position ${i} ⌛⌛`);
@@ -45,8 +48,6 @@ class SeedDatabase{
     };
     async seedBooks () {
         try {
-            // Connect to datavase;
-            await this.connectToDB();
             //   Seeding books.
             console.log("Seeding books into database ⌛⌛");
             outerloop: for (let i = 0; i < books.length; i++) {
@@ -80,7 +81,7 @@ class SeedDatabase{
     };
 };
 
-new SeedDatabase().seedBooks().then(data => {
+new SeedDatabase().init().then(data => {
     console.log(data);
     process.exit(0);
 }).catch(err => {

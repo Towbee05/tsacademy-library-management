@@ -20,12 +20,16 @@ app.use("/api/v1/books", bookRouter);
 // Error middleware
 app.use(errorCatcher);
 
-app.listen(5000, async () => {
+const startServer = async () => {
     try{
         const connection = await connectDB(mongoUri);
-        console.log("Server is starting now");
+        app.listen(5000, async () => {
+            console.log("Server is starting now");   
+        });
     } catch (err) {
         console.log(err);
-        process.exit(0);
+        process.exit(1);
     }
-});
+};
+
+startServer();
